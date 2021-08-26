@@ -1,6 +1,9 @@
 <template>
   <Header />
+
+  <!-- 달라지는 페이지 영역 -->
   <RouterView />
+  
   <Footer />
 </template>
 

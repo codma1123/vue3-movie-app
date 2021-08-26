@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import Loader from '~/components/Loader'
 
 export default {
@@ -30,21 +31,15 @@ export default {
     }
   },
   computed: {
-    image(){
-      return this.$store.state.about.image
-    },
-    name(){
-      return this.$store.state.about.name
-    },
-    email(){
-      return this.$store.state.about.email
-    },
-    blog(){
-      return this.$store.state.about.blog
-    },
-    phone(){
-      return this.$store.state.about.phone
-    },
+
+    // mapState(모듈명, 배열) - 배열내용을 computed에 등록
+    ...mapState('about',[
+      'image',
+      'name',
+      'email',
+      'blog',
+      'phone'
+    ])
   },
   mounted(){
     this.init()

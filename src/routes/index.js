@@ -9,6 +9,11 @@ export default createRouter({
   // Hash, History
   // https://google.com/#/search
   history: createWebHashHistory(),
+
+  //스크롤 탑
+  scrollBehavior(){
+    return {top: 0}
+  },
   // pages
   // https://google.com
   routes: [
